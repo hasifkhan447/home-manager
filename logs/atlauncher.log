@@ -1,0 +1,56 @@
+20:07:15.795 [ATL-Logging-Thread] INFO  - Organising filesystem
+
+20:07:15.918 [ATL-Logging-Thread] INFO  - ATLauncher Version: 3.4.37.2 [8fe9e609c82c375db494fb10a63e1c57ae9ada97]
+
+20:07:15.919 [ATL-Logging-Thread] INFO  - App Arguments: ["--working-dir","**USERSDIR**","--no-launcher-update"]
+
+20:07:15.921 [ATL-Logging-Thread] INFO  - JVM Arguments: []
+
+20:07:15.936 [ATL-Logging-Thread] INFO  - Java Version: Java 21 (21.0.3)
+
+20:07:15.939 [ATL-Logging-Thread] INFO  - Java Path: /nix/store/gj4kkk14sld1p38m438dy3c903s4i6ll-openjdk-21.0.3+9/lib/openjdk
+
+20:07:15.945 [ATL-Logging-Thread] INFO  - 64 Bit Java: true
+
+20:07:15.947 [ATL-Logging-Thread] INFO  - RAM Available: 19787MB
+
+20:07:15.960 [ATL-Logging-Thread] INFO  - Launcher Directory: **USERSDIR**
+
+20:07:16.025 [ATL-Logging-Thread] INFO  - GPU: unknown (unknown) unknown 0MB VRAM
+
+20:07:16.172 [ATL-Logging-Thread] INFO  - CPU: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz 4 cores/8 threads
+
+20:07:16.174 [ATL-Logging-Thread] INFO  - Operating System: NixOS (24.11 (Vicuna) build 6.10.8)
+
+20:07:16.177 [ATL-Logging-Thread] INFO  - Bitness: 64
+
+20:07:16.178 [ATL-Logging-Thread] INFO  - Uptime: 4719
+
+20:07:16.184 [ATL-Logging-Thread] INFO  - Manufacturer: GNU/Linux
+
+20:07:16.187 [ATL-Logging-Thread] INFO  - Showing splash screen and loading everything
+
+20:07:16.189 [ATL-Logging-Thread] INFO  - Checking for updated files!
+
+20:07:23.200 [ATL-Logging-Thread] INFO  - Finished downloading updated files!
+
+20:07:25.839 [ATL-Logging-Thread] INFO  - Launcher finished loading everything
+
+20:07:25.841 [ATL-Logging-Thread] WARN  - Launcher not setup. Loading Setup Dialog
+
+20:07:44.192 [ATL-Logging-Thread] INFO  - Launcher opening
+
+20:07:44.193 [ATL-Logging-Thread] INFO  - Made By Bob*
+
+20:07:44.194 [ATL-Logging-Thread] INFO  - *(Not Actually)
+
+20:07:44.199 [ATL-Logging-Thread] INFO  - Setting up Bottom Bar
+
+20:07:44.248 [ATL-Logging-Thread] INFO  - Finished Setting up Bottom Bar
+
+20:07:44.249 [ATL-Logging-Thread] INFO  - Setting up Tabs
+
+20:07:44.690 [ATL-Logging-Thread] INFO  - Finished Setting up Tabs
+
+20:07:44.706 [ATL-Logging-Thread] INFO  - Showing Launcher
+
