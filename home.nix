@@ -58,7 +58,7 @@
     (callPackage ../nix-custom-packages/gdb-with-peda/peda.nix {})
     emacs
     coreutils
-    ispell
+    # ispell
     # davinci-resolve
     zip
     steam
@@ -83,9 +83,9 @@
     unixODBC
     unixODBCDrivers.msodbcsql17
 
-    distrobox
+    # distrobox
 
-    julia-bin
+    # julia-bin
     azuredatastudio
 
     dunst
@@ -93,13 +93,49 @@
     fzf
 
     alacritty-theme
-    valgrind
+    # valgrind
+    # fio
 
-    onedriver
-    kopia
+    duf
+    gnuplot
+
+    # qbittorrent
+    unrar
+
+
+    zenity
 
 
     yazi
+    bc
+
+    picom
+    acpi
+    # uget
+    # uget-integrator
+
+    (opera.override { proprietaryCodecs = true; })
+
+
+
+    lutris
+    busybox
+    inetutils
+    zoom-us
+    htop
+    rclone
+    restic
+    anki
+    qemu
+
+
+    radare2
+    man-pages
+
+    ninja
+    meson
+
+    obs-studio
 
   ];
 
@@ -107,13 +143,19 @@
     builtins.elem (pkgs.lib.getName pkg) [
       "davinci-resolve"
       "steam"
+      "unrar"
       "steam-original"
       "steam-run"
       "morgen"
       "unixODBC"
       "msodbcsql17"
       "azuredatastudio"
+      "opera"
+      "lutris"
+      "zoom"
     ];
+
+
 
 
 
@@ -204,10 +246,24 @@ fi
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".background-image".source = /home/hak/wallpapers/stars.jpg;
+    ".background-image".source = /home/hak/hdd/wallpapers/punk.jpg;
 
 
   };
+
+  home.file."~/.config/hypr/hyprland.conf".text = ''
+    decoration {
+      shadow_offset = 0 5
+      col.shadow = rgba(00000099)
+    }
+
+    $mod = SUPER
+    bind = $mainMod, Return, exec, alacritty
+    bindm = $mod, mouse:272, movewindow
+    bindm = $mod, mouse:273, resizewindow
+    bindm = $mod ALT, mouse:272, resizewindow
+  '';
+
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -234,7 +290,32 @@ fi
   };
   #services.xserver.displayManager.setupCommands = "xhost +local:docker\n";
 
+
   services.dunst.enable = true;
+
+  services.picom = {
+    enable = true;
+    fade = true;
+    inactiveOpacity = 0.7;
+    activeOpacity = 1;
+    settings = {
+      blur = {
+        method = "guassian";
+        size=10;
+        deviation=5.0;
+      };
+      opacity-rule = [
+        "90:class_g = 'Alacritty'"
+      ];
+    };
+  };
+
+
+
+  qt.enable = true;
+  qt.platformTheme.name = "gtk";
+  qt.style.name = "adwaita-dark";
+
 
   programs.neovim = {
     enable = true;
@@ -354,6 +435,17 @@ set -g @catppuccin_flavour 'mocha'
     interactiveShellInit = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       ${pkgs.zoxide}/bin/zoxide init fish | source
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
+
     '';
     shellAliases = {
       z = "zoxide";
@@ -368,7 +460,6 @@ set -g @catppuccin_flavour 'mocha'
       ll = "ls -la --color=auto";
       c = "clear";
       dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/.config";
-      y="yazi";
 
     };
   };
